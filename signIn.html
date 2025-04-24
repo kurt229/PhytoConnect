@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PhytoApp - Connexion</title>
+    <link rel="stylesheet" href="auth-styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <div class="auth-container">
+        <div class="auth-card">
+            <div class="logo-section">
+                <a href="landingPage.html" class="logo-link" aria-label="Accueil PhytoApp">
+                     <img src="logo.png" alt="PhytoApp Logo" class="logo-img">
+                </a>
+                <a href="landingPage.html" class="app-name-link">
+                    <h1>PhytoApp</h1>
+                </a>
+                 <p class="tagline">🌿 Content de te revoir !</p>
+            </div>
+            <form class="auth-form" id="login-form">
+
+                <div class="input-group">
+                    <label for="email"><i class="fas fa-envelope icon"></i> Email</label>
+                    <input type="email" id="email" name="email" required placeholder="votre.email@exemple.com">
+                    <span class="error-message" id="email-error"></span>
+                </div>
+                <div class="input-group">
+                    <label for="password"><i class="fas fa-lock icon"></i> Mot de passe</label>
+                    <input type="password" id="password" name="password" required placeholder="Votre mot de passe">
+                    <span class="error-message" id="password-error"></span>
+                </div>
+                 <div class="form-options">
+                     <label class="remember-me">
+                        <input type="checkbox" name="remember"> Se souvenir de moi
+                    </label>
+                    <a href="#" class="forgot-password">Mot de passe oublié ?</a>
+                 </div>
+                <button type="submit" class="auth-button">Se connecter</button>
+                <div class="form-footer">
+                     <span>Pas encore de compte ?</span> <a href="signUp.html" class="switch-form-link">Inscrivez-vous gratuitement</a>
+                </div>
+            </form>
+        </div>
+    </div>
+    <!-- No JS file needed for this page currently -->
+</body>
+</html>

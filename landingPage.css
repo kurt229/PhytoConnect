@@ -1,20 +1,18 @@
 /* Reset and Base Styles */
 :root {
-    --primary-green: #3A6B35; /* Deeper, more natural green */
-    --secondary-green: #6A994E; /* Lighter, complementary green */
-    --accent-green: #A7C957; /* Brighter accent for highlights */
-    --soft-beige: #F2E8CF; /* Warmer, earthy beige */
-    --background-light: #FBFBFB; /* Near white, clean background */
-    --text-dark: #333333; /* Dark grey for body text */
+    --primary-green: #3A6B35;
+    --secondary-green: #6A994E;
+    --accent-green: #A7C957;
+    --soft-beige: #F2E8CF;
+    --background-light: #FBFBFB;
+    --text-dark: #333333;
     --text-light: #FFFFFF;
     --border-color: #E0E0E0;
-    --shadow-light: rgba(58, 107, 53, 0.1); /* Subtle green shadow */
+    --shadow-light: rgba(58, 107, 53, 0.1);
     --shadow-medium: rgba(58, 107, 53, 0.2);
     --heading-font: 'Playfair Display', serif;
     --body-font: 'Montserrat', sans-serif;
-    /* Updated Hero Gradient - slightly more pronounced */
     --gradient-hero: linear-gradient(135deg, #e9f5e8 0%, #fdf6e8 100%);
-    /* Add a subtle pattern for the hero background */
     --hero-bg-pattern: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='60' viewBox='0 0 60 60'%3E%3Cg fill='%233a6b35' fill-opacity='0.03'%3E%3Cpath d='M54 30 A24 24 0 1 0 6 30 A24 24 0 1 0 54 30 Z'/%3E%3C/g%3E%3C/svg%3E");
 }
 
@@ -26,33 +24,39 @@
 
 html {
     scroll-behavior: smooth;
-    font-size: 16px; /* Base font size */
+    font-size: 16px;
+    overflow-x: hidden;
 }
 
 body {
     font-family: var(--body-font);
     color: var(--text-dark);
     background-color: var(--background-light);
-    line-height: 1.7; /* Increased line height for readability */
+    line-height: 1.7;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    width: 100%;
+    position: relative;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
 }
 
 h1, h2, h3, h4, h5, h6 {
     font-family: var(--heading-font);
     color: var(--primary-green);
     line-height: 1.3;
-    margin-bottom: 0.5em; /* Adjusted spacing */
+    margin-bottom: 0.5em;
     font-weight: 700;
 }
 
-h1 { font-size: clamp(2.5rem, 5vw, 3.5rem); } /* Responsive heading */
+h1 { font-size: clamp(2.5rem, 5vw, 3.5rem); }
 h2 { font-size: clamp(1.8rem, 4vw, 2.5rem); text-align: center; margin-bottom: 1.5em; }
 h3 { font-size: 1.25rem; color: var(--secondary-green); margin-bottom: 0.4em; font-weight: 600; }
 
 p {
     margin-bottom: 1.2em;
-    max-width: 65ch; /* Improve readability */
+    max-width: 65ch;
 }
 
 a {
@@ -63,7 +67,7 @@ a {
 
 a:hover {
     color: var(--primary-green);
-    text-decoration: none; /* Remove underline on hover by default */
+    text-decoration: none;
 }
 
 img, svg {
@@ -76,21 +80,20 @@ ul {
     list-style: none;
 }
 
-/* Utility Classes */
 .container {
     width: 90%;
-    max-width: 1140px; /* Slightly wider max-width */
+    max-width: 1140px;
     margin: 0 auto;
-    padding: 60px 0; /* Standard vertical padding */
+    padding: 60px 0;
 }
 
 .btn {
     display: inline-block;
-    padding: 12px 30px; /* Slightly larger padding */
-    border-radius: 50px; /* Pill shape */
+    padding: 12px 30px;
+    border-radius: 50px;
     font-weight: 600;
     text-decoration: none;
-    transition: all 0.3s ease; /* Transition all properties */
+    transition: all 0.3s ease;
     cursor: pointer;
     border: 1px solid transparent;
     font-size: 1rem;
@@ -122,15 +125,14 @@ ul {
     transform: translateY(-2px);
 }
 
-/* Header and Navigation */
 .main-header {
-    background-color: rgba(251, 251, 251, 0.95); /* Semi-transparent white */
-    backdrop-filter: blur(10px); /* Frosted glass effect */
+    background-color: rgba(251, 251, 251, 0.95);
+    backdrop-filter: blur(10px);
     box-shadow: 0 2px 10px rgba(0,0,0,0.05);
     padding: 15px 5%;
     position: sticky;
     top: 0;
-    z-index: 1000; /* Ensure header is on top */
+    z-index: 1000;
     width: 100%;
     transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
@@ -147,24 +149,26 @@ ul {
     font-weight: 700;
     color: var(--primary-green);
     text-decoration: none;
-    display: flex; /* Align icon and text */
+    display: flex;
     align-items: center;
-    gap: 8px; /* Space between icon and text */
-    flex-shrink: 0; /* Prevent logo from shrinking */
+    gap: 8px;
+    flex-shrink: 0;
 }
+
 .brand-logo .logo-img {
-    width: 40px; /* Increased from 30px */
-    height: 40px; /* Increased from 30px */
-    object-fit: contain; /* Maintain aspect ratio */
-    transition: transform 0.3s ease; /* Added subtle transition */
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+    transition: transform 0.3s ease;
 }
+
 .brand-logo:hover .logo-img {
-    transform: scale(1.05); /* Example hover effect */
+    transform: scale(1.05);
 }
 
 .brand-logo span {
     font-family: var(--heading-font);
-    font-size: 1.8rem; /* Match original logo font size */
+    font-size: 1.8rem;
     font-weight: 700;
     color: var(--primary-green);
     transition: color 0.3s ease;
@@ -181,20 +185,20 @@ ul {
 .nav-links {
     display: flex;
     align-items: center;
-    gap: 30px; /* Increased gap */
+    gap: 30px;
     margin-left: auto;
     margin-right: auto;
 }
 
 .nav-links li a {
-    font-weight: 500; /* Slightly lighter weight */
+    font-weight: 500;
     color: var(--text-dark);
     padding: 5px 0;
     position: relative;
     text-decoration: none;
     font-size: 0.95rem;
-    z-index: 1100; /* Ensure toggle is above nav links when active */
-    margin-left: 15px; /* Add some space between links and toggle */
+    z-index: 1100;
+    margin-left: 15px;
 }
 
 .nav-links li a:not(.btn)::after {
@@ -202,11 +206,11 @@ ul {
     position: absolute;
     width: 0;
     height: 2px;
-    bottom: -3px; /* Position underline slightly below */
+    bottom: -3px;
     left: 50%;
     transform: translateX(-50%);
     background-color: var(--secondary-green);
-    transition: width 0.4s cubic-bezier(0.25, 0.8, 0.25, 1); /* Smoother transition */
+    transition: width 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
 .nav-links li a:not(.btn):hover::after {
@@ -214,12 +218,12 @@ ul {
 }
 
 .nav-links li a:hover:not(.btn) {
-    color: var(--secondary-green); /* Change text color on hover */
+    color: var(--secondary-green);
     text-decoration: none;
 }
 
 .nav-links .btn {
-    padding: 8px 20px; /* Smaller padding for nav button */
+    padding: 8px 20px;
     font-size: 0.9rem;
 }
 
@@ -227,19 +231,18 @@ ul {
     display: none;
     background: none;
     border: none;
-    font-size: 1.8rem; /* Adjusted size */
+    font-size: 1.8rem;
     color: var(--primary-green);
     cursor: pointer;
-    z-index: 1100; /* Ensure toggle is above nav links when active */
-    padding: 5px; /* Add some padding for easier clicking */
-    line-height: 1; /* Prevent extra space */
+    z-index: 1100;
+    padding: 5px;
+    line-height: 1;
 }
 
 .mobile-menu-toggle[aria-expanded="true"] {
-    font-size: 2.2rem; /* Slightly larger for 'X' */
+    font-size: 2.2rem;
 }
 
-/* Hero Section */
 .hero {
     display: flex;
     flex-direction: column;
@@ -305,7 +308,6 @@ ul {
     color: var(--text-light);
 }
 
-/* Keyframe Animations */
 @keyframes fadeInUp {
     from {
         opacity: 0;
@@ -317,7 +319,6 @@ ul {
     }
 }
 
-/* Features Section */
 .features-section {
     padding: 80px 5%;
     background-color: var(--background-light);
@@ -368,6 +369,7 @@ ul {
 .feature-item:hover .icon {
     background-color: var(--secondary-green);
 }
+
 .feature-item:hover .icon i {
      color: var(--text-light);
 }
@@ -378,6 +380,7 @@ ul {
     color: var(--primary-green);
     font-weight: 600;
 }
+
 .feature-item p {
     font-size: 0.95rem;
     color: var(--text-dark);
@@ -385,7 +388,6 @@ ul {
     margin-bottom: 0;
 }
 
-/* Testimonials Section */
 .testimonials-section {
     padding: 80px 5%;
     background-color: #f7fbf6;
@@ -427,7 +429,7 @@ ul {
 }
 
 .testimonial-quote::before {
-    content: '“';
+    content: '"';
     font-family: Georgia, serif;
     font-size: 2.5rem;
     color: var(--accent-green);
@@ -445,7 +447,6 @@ ul {
     margin-bottom: 0;
 }
 
-/* CTA Section */
 .cta-section {
     background: var(--gradient-hero);
     background-image: var(--hero-bg-pattern), var(--gradient-hero);
@@ -467,20 +468,20 @@ ul {
     font-size: 1.1rem;
     color: var(--text-dark);
 }
+
 .cta-section p strong {
     color: var(--primary-green);
     font-weight: 600;
 }
 
 .cta-section .btn-primary {
-     padding: 15px 35px;
+    padding: 15px 35px;
     font-size: 1.1rem;
     display: inline-flex;
     align-items: center;
     gap: 8px;
 }
 
-/* Footer */
 .main-footer-bottom {
     background-color: #F4F4F4;
     color: #777;
@@ -490,7 +491,6 @@ ul {
     border-top: 1px solid var(--border-color);
 }
 
-/* Sticky CTA Button Styles */
 .sticky-cta-button {
     position: fixed;
     bottom: 25px;
@@ -504,7 +504,7 @@ ul {
     text-decoration: none;
     font-weight: 600;
     font-size: 0.95rem;
-    display: inline-flex;
+    display: none;
     align-items: center;
     gap: 8px;
     opacity: 0;
@@ -513,6 +513,7 @@ ul {
 }
 
 .sticky-cta-button.visible {
+    display: inline-flex;
     opacity: 1;
     transform: translateY(0);
 }
@@ -532,7 +533,6 @@ ul {
     transform: translateX(3px);
 }
 
-/* Responsive Design */
 @media (max-width: 992px) {
     .hero {
         min-height: auto;
@@ -583,9 +583,11 @@ ul {
     .nav-links li a {
         font-size: 1.2rem;
     }
+    
     .nav-links li a:not(.btn)::after {
         display: none;
     }
+    
     .nav-links .btn {
         font-size: 1.1rem;
         padding: 10px 25px;
